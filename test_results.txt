@@ -1,0 +1,79 @@
+UUID
+
+transaction type: /bench/insert_event_uuid.sql
+scaling factor: 1
+query mode: simple
+number of clients: 32
+number of threads: 32
+maximum number of tries: 1
+duration: 60 s
+number of transactions actually processed: 222823
+number of failed transactions: 0 (0.000%)
+latency average = 7.496 ms
+latency stddev = 23.632 ms
+initial connection time = 65.441 ms
+tps = 3706.200800 (without initial connection time)
+statement latencies in milliseconds and failures:
+7.496 0 INSERT INTO event_log_uuid (event_type, payload, source)
+
+
+
+BIGINT
+
+transaction type: /bench/insert_event_bigint.sql
+scaling factor: 1
+query mode: simple
+number of clients: 32
+number of threads: 32
+maximum number of tries: 1
+duration: 60 s
+number of transactions actually processed: 204762
+number of failed transactions: 0 (0.000%)
+latency average = 8.327 ms
+latency stddev = 28.185 ms
+initial connection time = 60.155 ms
+tps = 3414.689227 (without initial connection time)
+statement latencies in milliseconds and failures:
+8.327 0 INSERT INTO event_log_bigint (event_type, payload, source)
+
+
+
+BULK UUID
+
+transaction type: /bench/insert_bulk_event_uuid.sql
+scaling factor: 1
+query mode: simple
+number of clients: 16
+number of threads: 16
+maximum number of tries: 1
+duration: 60 s
+number of transactions actually processed: 8180
+number of failed transactions: 0 (0.000%)
+latency average = 118.193 ms
+latency stddev = 107.855 ms
+initial connection time = 33.865 ms
+tps = 135.176053 (without initial connection time)
+statement latencies in milliseconds and failures:
+0.054 0 \set batch 1000
+118.163 0 INSERT INTO event_log_uuid (event_type, payload, source)
+
+
+
+BULK BIGINT
+
+transaction type: /bench/insert_bulk_event_bigint.sql
+scaling factor: 1
+query mode: simple
+number of clients: 16
+number of threads: 16
+maximum number of tries: 1
+duration: 60 s
+number of transactions actually processed: 12925
+number of failed transactions: 0 (0.000%)
+latency average = 74.190 ms
+latency stddev = 66.593 ms
+initial connection time = 35.703 ms
+tps = 215.376108 (without initial connection time)
+statement latencies in milliseconds and failures:
+0.043 0 \set batch 1000
+74.166 0 INSERT INTO event_log_bigint (event_type, payload, source)
